@@ -1,0 +1,21 @@
+link(rel='stylesheet', href='/css/lg.css')
+script(src='http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU')
+script(src='/js/map.js')
+script(src='/js/pmtest.js')
+script.
+	var placemarks = !{placemarks}
+	ymaps.ready(init);
+
+div.bgplate
+div.plate
+	h1 РЯЗАНСКИЙ НЕКРОПОЛЬ: ЛАЗАРЕВСКОЕ КЛАДБИЩЕ
+
+	button(onclick="pmtest()").normal_button Известные
+	button(onclick="pmtest()", disabled="true").normal_button Все
+
+	#map Карта Лазаревского кладбища
+
+div.authline
+	div BETA v.0.1.1
+	div last updated 22.04.2014
+	div total in registry: #{burialsCount} 

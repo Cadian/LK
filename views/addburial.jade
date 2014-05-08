@@ -1,0 +1,59 @@
+link(rel='stylesheet', href='/css/lg.css')
+script(src='http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU')
+script(src='/js/jquery-2.1.0.min.js')
+script(src='/js/map.js')
+script(src='/js/views/addburial.js')
+script.
+	// Add params here
+
+div.bgplate
+div.plate
+	h1 Рязанаский некрополь: Лазаревское кладбище
+	form(name="addburial", action="/burials/add", enctype="multipart/form-data", method="post").addform
+		div	Название
+			input(type="text", name="title")
+		div	Описание
+			textarea(name="descr")
+		div	Расположение
+			input(type="number", name="block") 
+			квартал
+			input(type="number", name="line") 
+			ряд
+			input(type="number", name="place") 
+			место
+			input(type="text", name="subplace") 
+			литера (необязательно)
+		div
+			Фото
+			input(type="file", name="image")
+		div 
+			Маркер
+			input(type="text", name="markImg")
+		div 		
+			Примечательное
+			input(type="checkbox", name="featured")
+		input(type="text", name="coords").hidden
+		div 
+			Сведения о захороненых людях 
+			input(type="checkbox", name="areBuried")#areBuried
+		div
+			div#persons
+			button.normal_button#addone(type="button") +1
+			button.normal_button#removeone(type="button") -1 
+		input(type="submit", value="Добавить в реестр").normal_button
+
+	#map Укажите место на карте: 
+
+div.extraPersonTemplate.hidden
+	div
+		ФИО
+		input(type="text", name="fio")
+	div
+		Дата рождения 
+		input(type="text", name="dbth")
+	div
+		Дата смерти 
+		input(type="text", name="ddth")
+	div 
+		Дополнительная информация
+		textarea(name="info")
