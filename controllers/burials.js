@@ -67,6 +67,10 @@ exports.add = function (req, res) {
 	}
 }
 
+// exports.update
+
+// exports.search
+
 exports.clearAll = function (req, res) {	
 	var Burial = mongoose.model('Burial');
 	Burial.remove({}, function(err) {
