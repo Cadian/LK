@@ -1,14 +1,16 @@
 link(rel='stylesheet', href='/css/lg.css')
 script(src='http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU')
 script(src='/js/jquery-2.1.0.min.js')
+script(src='/js/jquery.backstretch.min.js')
 script(src='/js/map.js')
 script(src='/js/views/addburial.js')
 script.
+	$(document).ready(function() {$.backstretch("/imgs/background/1.jpg")});
 	// Add params here
 
 div.bgplate
 div.plate
-	h1 Рязанаский некрополь: Лазаревское кладбище
+	include includes/header
 	form(name="addburial", action="/burials/add", enctype="multipart/form-data", method="post").addform
 		div	Название
 			input(type="text", name="title")
@@ -57,3 +59,5 @@ div.extraPersonTemplate.hidden
 	div 
 		Дополнительная информация
 		textarea(name="info")
+
+include includes/authline

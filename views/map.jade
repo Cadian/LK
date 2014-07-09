@@ -8,14 +8,11 @@ script.
 
 div.bgplate
 div.plate
-	h1 РЯЗАНСКИЙ НЕКРОПОЛЬ: ЛАЗАРЕВСКОЕ КЛАДБИЩЕ
+	include includes/header
 
 	button(onclick="pmtest()").normal_button Известные
 	button(onclick="pmtest()", disabled="true").normal_button Все
 
 	#map Карта Лазаревского кладбища
 
-div.authline
-	div BETA v.0.1.1
-	div last updated 22.04.2014
-	div total in registry: #{burialsCount} 
+include includes/authline

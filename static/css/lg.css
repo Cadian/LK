@@ -51,7 +51,7 @@
 }
 body, html {
     height: 100%;
-    background: #293142 url("/imgs/background/1.jpg") no-repeat right;
+    /*background: #293142 url("/imgs/background/1.jpg") no-repeat right;*/
 }
 .newslist {
     display: block;
