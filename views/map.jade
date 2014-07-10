@@ -1,10 +1,12 @@
 link(rel='stylesheet', href='/css/lg.css')
 script(src='http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU')
+include includes/background
 script(src='/js/map.js')
 script(src='/js/pmtest.js')
 script.
 	var placemarks = !{placemarks}
 	ymaps.ready(init);
+
 
 div.bgplate
 div.plate

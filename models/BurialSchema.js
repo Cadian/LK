@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var DocInfoSchema = require('./common/DocInfoSchema.js');
 
 var BurialSchema = new Schema({
   title: {type : String, default : '', trim : true},
@@ -14,13 +15,8 @@ var BurialSchema = new Schema({
   links: [{type : String, default : ''}],
   markImg: {type : String, default : ''},
   featured: {type : String, default : ''},
-  persons: [{
-		fio: {type : String},
-		dbth: {type : String},
-		ddth: {type : String},
-		descr: {type : String} 
-  }],
-  createdAt  : {type : Date, default : Date.now}
+  persons: [{type : mongoose.Schema.Types.ObjectId, ref: 'Person'}],
+  docInfo: DocInfoSchema
 })
 
 /**

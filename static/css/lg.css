@@ -111,3 +111,21 @@ body, html {
     margin: 5px;
     padding: 5px; 
 }
+
+.addform div {
+    vertical-align: middle;
+    color: #293040;
+    font-weight: 100;
+    display: block;
+    padding: 1%;
+}
+
+.addform input {
+    margin-left: 1%;
+}
+
+.addform textarea {
+    width: 100%;
+    height: 80px;
+    margin-left: 1%;
+}

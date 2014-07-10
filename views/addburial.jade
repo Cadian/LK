@@ -1,43 +1,68 @@
 link(rel='stylesheet', href='/css/lg.css')
 script(src='http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU')
-script(src='/js/jquery-2.1.0.min.js')
-script(src='/js/jquery.backstretch.min.js')
+include includes/background
 script(src='/js/map.js')
 script(src='/js/views/addburial.js')
-script.
-	$(document).ready(function() {$.backstretch("/imgs/background/1.jpg")});
-	// Add params here
+
 
 div.bgplate
 div.plate
 	include includes/header
 	form(name="addburial", action="/burials/add", enctype="multipart/form-data", method="post").addform
-		div	Название
-			input(type="text", name="title")
-		div	Описание
-			textarea(name="descr")
-		div	Расположение
-			input(type="number", name="block") 
-			квартал
-			input(type="number", name="line") 
-			ряд
-			input(type="number", name="place") 
-			место
-			input(type="text", name="subplace") 
-			литера (необязательно)
-		div
-			Фото
-			input(type="file", name="image")
-		div 
-			Маркер
-			input(type="text", name="markImg")
-		div 		
-			Примечательное
-			input(type="checkbox", name="featured")
+		table
+			tr
+				td 
+					div Название
+				td 
+					input(type="text", name="title")
+			tr
+				td 
+					div Описание
+				td 
+					textarea(name="descr")
+			tr
+				td 
+					div Расположение
+				td
+					table
+						tr
+							td 
+								div квартал
+							td 
+								div ряд
+							td 
+								div место
+							td 
+								div литера
+						tr
+							td 
+								input.s_num(type="number", name="block") 
+							td 
+								input.s_num(type="number", name="line") 
+							td 
+								input.s_num(type="number", name="place") 
+							td 
+								input.s_num(type="text", name="subplace")
+			tr
+				td 
+					div Фото
+				td			
+					input(type="file", name="image")
+			tr 						
+				td 
+					div Маркер
+				td			
+					input(type="text", name="markImg")
+			tr 
+				td(colspan="2")
+					div Примечательное 
+						input(type="checkbox", name="featured")
+			tr 
+				td(colspan="2")
+					div Сведения о захороненых людях 
+						input(type="checkbox", name="areBuried")#areBuried		
 		input(type="text", name="coords").hidden
-		div 
-			Сведения о захороненых людях 
-			input(type="checkbox", name="areBuried")#areBuried
+			
 		div
 			div#persons
 			button.normal_button#addone(type="button") +1

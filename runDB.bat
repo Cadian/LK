@@ -1,1 +1,1 @@
-mongod -dbpath D:\projects\LK\site\db
+mongod -dbpath D:\projects\LK\Lazar\db
